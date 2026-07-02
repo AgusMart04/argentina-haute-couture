@@ -22,14 +22,54 @@ export default function LaExperiencia() {
   };
 
   const items = [
-    { n: "01", t: "Desfiles de Alta Costura", d: "Pasarelas de alta costura con diseñadores argentinos e internacionales.", img: runwayImg },
-    { n: "02", t: "Showcase de Diseñadores", d: "Exposición exclusiva de las nuevas propuestas de la moda argentina.", img: atelierImg },
-    { n: "03", t: "Tango & Couture Night", d: "Una noche fusión de tango y alta costura en un icónico espacio porteño.", img: editorial1 },
-    { n: "04", t: "Exhibiciones de Arte", d: "Arte argentino contemporáneo en dialogue con la moda.", img: detail1 },
-    { n: "05", t: "Producciones Editoriales", d: "Sesiones fotográficas y contenido editorial de alto impacto.", img: heroImg },
-    { n: "06", t: "Activaciones de Marcas", d: "Experiencias inmersivas de marcas globales en la ciudad.", img: venueImg },
-    { n: "07", t: "Prensa Internacional", d: "Medios internacionales cubriendo el evento en vivo.", img: maderoImg },
-    { n: "08", t: "Programa Cultural", d: "Unaagenda cultural que trasciende la moda.", img: buenosAiresImg },
+    {
+      n: "01",
+      t: "Desfiles de Alta Costura",
+      d: "Pasarelas de alta costura con diseñadores argentinos e internacionales.",
+      img: runwayImg,
+    },
+    {
+      n: "02",
+      t: "Showcase de Diseñadores",
+      d: "Exposición exclusiva de las nuevas propuestas de la moda argentina.",
+      img: atelierImg,
+    },
+    {
+      n: "03",
+      t: "Tango & Couture Night",
+      d: "Una noche fusión de tango y alta costura en un icónico espacio porteño.",
+      img: editorial1,
+    },
+    {
+      n: "04",
+      t: "Exhibiciones de Arte",
+      d: "Arte argentino contemporáneo en dialogue con la moda.",
+      img: detail1,
+    },
+    {
+      n: "05",
+      t: "Producciones Editoriales",
+      d: "Sesiones fotográficas y contenido editorial de alto impacto.",
+      img: heroImg,
+    },
+    {
+      n: "06",
+      t: "Activaciones de Marcas",
+      d: "Experiencias inmersivas de marcas globales en la ciudad.",
+      img: venueImg,
+    },
+    {
+      n: "07",
+      t: "Prensa Internacional",
+      d: "Medios internacionales cubriendo el evento en vivo.",
+      img: maderoImg,
+    },
+    {
+      n: "08",
+      t: "Programa Cultural",
+      d: "Unaagenda cultural que trasciende la moda.",
+      img: buenosAiresImg,
+    },
   ];
 
   const desktopItems = [
@@ -48,7 +88,9 @@ export default function LaExperiencia() {
       <div className="mx-auto max-w-[1600px]">
         <div className="flex items-end justify-between flex-wrap gap-8 mb-16">
           <div>
-            <Reveal><p className="label-eyebrow mb-6 text-sol">06 · La experiencia</p></Reveal>
+            <Reveal>
+              <p className="label-eyebrow mb-6 text-sol">06 · La experiencia</p>
+            </Reveal>
             <Reveal delay={100}>
               <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-ivory max-w-4xl text-balance">
                 Ocho capítulos para
@@ -81,7 +123,12 @@ export default function LaExperiencia() {
                   }`}
                 >
                   <div className="relative aspect-[3/4] w-full">
-                    <img src={e.img} alt={e.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                    <img
+                      src={e.img}
+                      alt={e.t}
+                      loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-6">
                       <div className="flex items-baseline gap-3">
@@ -101,7 +148,10 @@ export default function LaExperiencia() {
           </div>
           <div className="mt-6 flex items-center justify-center gap-3">
             {Array.from({ length: 8 }).map((_, i) => (
-              <span key={i} className={`h-1.5 rounded-full transition-all duration-300 ${activeExp === i ? "w-6 bg-sol" : "w-1.5 bg-sol/30"}`} />
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${activeExp === i ? "w-6 bg-sol" : "w-1.5 bg-sol/30"}`}
+              />
             ))}
           </div>
         </div>
@@ -109,13 +159,24 @@ export default function LaExperiencia() {
         {/* Desktop: 4-col grid */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-px bg-celeste-deep/30">
           {desktopItems.map((e, i) => (
-            <Reveal key={e.n} delay={(i % 4) * 80} className="group relative aspect-[3/4] overflow-hidden bg-ink cursor-pointer">
-              <img src={e.img} alt={e.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out" />
+            <Reveal
+              key={e.n}
+              delay={(i % 4) * 80}
+              className="group relative aspect-[3/4] overflow-hidden bg-ink cursor-pointer"
+            >
+              <img
+                src={e.img}
+                alt={e.t}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent group-hover:from-celeste-deep/80 group-hover:via-ink/40 transition-all duration-700" />
               <div className="absolute inset-0 p-7 flex flex-col justify-between">
                 <span className="font-impact text-sol text-xl">{e.n}</span>
                 <div>
-                  <h3 className="font-display text-2xl md:text-3xl text-ivory leading-tight">{e.t}</h3>
+                  <h3 className="font-display text-2xl md:text-3xl text-ivory leading-tight">
+                    {e.t}
+                  </h3>
                   <div className="mt-4 flex items-center gap-3 label-eyebrow text-sol text-xs opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                     Descubrir <span>→</span>
                   </div>
