@@ -24,7 +24,11 @@ function Layout() {
       <ScrollToTop />
       <div
         className="fixed top-0 left-0 z-50 h-[3px] gradient-argentina origin-left"
-        style={{ transform: `scaleX(${progress})`, width: "100%", transition: "transform 0.1s linear" }}
+        style={{
+          transform: `scaleX(${progress})`,
+          width: "100%",
+          transition: "transform 0.1s linear",
+        }}
       />
       <Navbar />
       <Outlet />

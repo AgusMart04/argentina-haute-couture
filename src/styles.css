@@ -55,7 +55,7 @@
   --celeste-deep: oklch(0.52 0.18 245);
   --sky-ar: oklch(0.82 0.105 230);
   --sol: oklch(0.82 0.165 85);
-  --sol-deep: oklch(0.70 0.18 70);
+  --sol-deep: oklch(0.7 0.18 70);
   --tango: oklch(0.62 0.235 18);
   --ink: oklch(0.18 0.06 250);
   --ink-soft: oklch(0.34 0.05 250);
@@ -82,10 +82,13 @@
   --ring: var(--celeste);
 }
 
-
 @layer base {
-  * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -94,11 +97,23 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
-  ::selection { background-color: var(--color-sol); color: var(--color-ink); }
+  ::selection {
+    background-color: var(--color-sol);
+    color: var(--color-ink);
+  }
 
-  .font-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.035em; }
-  .font-impact { font-family: var(--font-impact); letter-spacing: 0.005em; }
-  .font-mono { font-family: var(--font-mono); }
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+  }
+  .font-impact {
+    font-family: var(--font-impact);
+    letter-spacing: 0.005em;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
+  }
 
   .label-eyebrow {
     font-family: var(--font-impact);
@@ -120,31 +135,99 @@
   }
 }
 
-@keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.18); } }
-@keyframes reveal-blur { from { opacity: 0; filter: blur(20px); transform: translateY(20px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
-@keyframes scroll-hint { 0%,100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(8px); opacity: 1; } }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes sun-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@keyframes slow-zoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.18);
+  }
+}
+@keyframes reveal-blur {
+  from {
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes sun-spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes gradient-shift {
-  0%,100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 @keyframes flag-wave {
-  0%,100% { transform: translateY(0) skewY(0); }
-  50% { transform: translateY(-4px) skewY(-0.5deg); }
+  0%,
+  100% {
+    transform: translateY(0) skewY(0);
+  }
+  50% {
+    transform: translateY(-4px) skewY(-0.5deg);
+  }
 }
 
-@utility animate-slow-zoom { animation: slow-zoom 22s ease-out infinite alternate; }
-@utility animate-scroll-hint { animation: scroll-hint 2s ease-in-out infinite; }
-@utility animate-marquee { animation: marquee 35s linear infinite; }
-@utility animate-sun-spin { animation: sun-spin 60s linear infinite; }
-@utility animate-gradient-shift { background-size: 200% 200%; animation: gradient-shift 12s ease infinite; }
-@utility animate-flag-wave { animation: flag-wave 5s ease-in-out infinite; }
+@utility animate-slow-zoom {
+  animation: slow-zoom 22s ease-out infinite alternate;
+}
+@utility animate-scroll-hint {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+@utility animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+@utility animate-sun-spin {
+  animation: sun-spin 60s linear infinite;
+}
+@utility animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+@utility animate-flag-wave {
+  animation: flag-wave 5s ease-in-out infinite;
+}
 
 @utility reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 1s ease;
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1s ease;
   filter: blur(8px);
   &.is-visible {
     opacity: 1;
@@ -158,14 +241,27 @@
   height: 2px;
 }
 
-@utility text-balance { text-wrap: balance; }
+@utility text-balance {
+  text-wrap: balance;
+}
 
 @utility gradient-argentina {
-  background-image: linear-gradient(120deg, var(--color-celeste-deep) 0%, var(--color-celeste) 35%, var(--color-sky) 55%, var(--color-sol) 100%);
+  background-image: linear-gradient(
+    120deg,
+    var(--color-celeste-deep) 0%,
+    var(--color-celeste) 35%,
+    var(--color-sky) 55%,
+    var(--color-sol) 100%
+  );
 }
 
 @utility text-flag {
-  background-image: linear-gradient(90deg, var(--color-celeste-deep), var(--color-ivory) 50%, var(--color-celeste-deep));
+  background-image: linear-gradient(
+    90deg,
+    var(--color-celeste-deep),
+    var(--color-ivory) 50%,
+    var(--color-celeste-deep)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

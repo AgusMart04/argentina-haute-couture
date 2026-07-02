@@ -1,6 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "@tanstack/react-router";
+import { Analytics } from "@vercel/analytics/react";
 import { router } from "./router";
 import "./styles.css";
 
@@ -10,6 +11,7 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <RouterProvider router={router} />
+      <Analytics />
     </StrictMode>,
   );
 }

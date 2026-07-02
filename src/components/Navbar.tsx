@@ -28,19 +28,30 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-[1600px] px-6 md:px-12 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
-            <SolDeMayo className={`h-7 w-7 text-sol-deep transition-transform duration-700 group-hover:rotate-90 ${scrolled ? "" : "drop-shadow-[0_2px_8px_rgba(245,180,0,0.5)]"}`} />
-            <span className={`font-impact text-xl tracking-[0.18em] ${scrolled ? "text-ink" : "text-ivory drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"}`}>
+            <SolDeMayo
+              className={`h-7 w-7 text-sol-deep transition-transform duration-700 group-hover:rotate-90 ${scrolled ? "" : "drop-shadow-[0_2px_8px_rgba(245,180,0,0.5)]"}`}
+            />
+            <span
+              className={`font-impact text-xl tracking-[0.18em] ${scrolled ? "text-ink" : "text-ivory drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"}`}
+            >
               ARGENTINA<span className="text-celeste-deep"> HAUTE COUTURE</span>
             </span>
           </Link>
-          <ul className={`hidden md:flex items-center gap-8 label-eyebrow text-sm ${scrolled ? "text-ink-soft" : "text-ivory/90 drop-shadow"}`}>
+          <ul
+            className={`hidden md:flex items-center gap-8 label-eyebrow text-sm ${scrolled ? "text-ink-soft" : "text-ivory/90 drop-shadow"}`}
+          >
             {navLinks.map((l) => (
               <li key={l.to}>
-                <Link className="hover:text-sol-deep transition" to={l.to}>{l.label}</Link>
+                <Link className="hover:text-sol-deep transition" to={l.to}>
+                  {l.label}
+                </Link>
               </li>
             ))}
           </ul>
-          <Link to="/contacto" className="hidden md:inline-flex items-center gap-2 label-eyebrow text-ivory bg-ink hover:bg-celeste-deep px-5 py-3 transition-colors shadow-[0_8px_30px_-10px_rgba(30,111,184,0.6)]">
+          <Link
+            to="/contacto"
+            className="hidden md:inline-flex items-center gap-2 label-eyebrow text-ivory bg-ink hover:bg-celeste-deep px-5 py-3 transition-colors shadow-[0_8px_30px_-10px_rgba(30,111,184,0.6)]"
+          >
             Contacto <span>→</span>
           </Link>
           <button
@@ -48,15 +59,23 @@ export default function Navbar() {
             className="md:hidden flex flex-col gap-1.5 p-2"
             aria-label="Menu"
           >
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-ink" : "bg-ivory"} ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-ink" : "bg-ivory"} ${mobileOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-ink" : "bg-ivory"} ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span
+              className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-ink" : "bg-ivory"} ${mobileOpen ? "rotate-45 translate-y-2" : ""}`}
+            />
+            <span
+              className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-ink" : "bg-ivory"} ${mobileOpen ? "opacity-0" : ""}`}
+            />
+            <span
+              className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? "bg-ink" : "bg-ivory"} ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            />
           </button>
         </div>
       </nav>
 
       {/* Mobile menu */}
-      <div className={`md:hidden fixed inset-0 bg-ink/98 backdrop-blur-2xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-500 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+      <div
+        className={`md:hidden fixed inset-0 bg-ink/98 backdrop-blur-2xl z-50 flex flex-col items-center justify-center gap-8 transition-all duration-500 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+      >
         <button
           onClick={() => setMobileOpen(false)}
           className="absolute top-6 right-6 flex flex-col gap-1.5 p-2"

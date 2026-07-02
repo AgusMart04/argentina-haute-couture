@@ -17,14 +17,23 @@ export default function NuestraEsencia() {
           </Reveal>
           <Reveal delay={120}>
             <div className="relative">
-              <img src={editorial1} alt="Editorial fashion argentino frente a fachada Belle Époque" loading="lazy" width={1280} height={1600} className="w-full h-[45vh] md:h-[70vh] object-cover shadow-[0_30px_80px_-30px_rgba(30,111,184,0.5)]" />
+              <img
+                src={editorial1}
+                alt="Editorial fashion argentino frente a fachada Belle Époque"
+                loading="lazy"
+                width={1280}
+                height={1600}
+                className="w-full h-[45vh] md:h-[70vh] object-cover shadow-[0_30px_80px_-30px_rgba(30,111,184,0.5)]"
+              />
               <div className="absolute -bottom-6 -right-6 bg-sol p-5 shadow-xl rotate-3">
                 <SolDeMayo className="h-12 w-12 text-ink" />
               </div>
             </div>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-10 font-mono text-xs text-ink-soft">No. 001 — El despertar de una nación creativa</p>
+            <p className="mt-10 font-mono text-xs text-ink-soft">
+              No. 001 — El despertar de una nación creativa
+            </p>
           </Reveal>
         </div>
         <div className="lg:col-span-7 lg:pl-12 flex flex-col justify-center">
@@ -45,23 +54,26 @@ export default function NuestraEsencia() {
           <Reveal delay={300}>
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 text-ink-soft text-lg font-light leading-relaxed">
               <p>
-                Argentina es <strong className="text-ink font-medium">tango, fútbol, literatura, asado, milonga, cine, arquitectura</strong>.
-                Es una de las identidades culturales más poderosas del planeta.
+                Argentina es{" "}
+                <strong className="text-ink font-medium">
+                  tango, fútbol, literatura, asado, milonga, cine, arquitectura
+                </strong>
+                . Es una de las identidades culturales más poderosas del planeta.
               </p>
               <p>
-                Hoy, esa misma fuerza creativa está lista para tomar el escenario global
-                de la moda. <strong className="text-ink font-medium">Es nuestro turno.</strong>
+                Hoy, esa misma fuerza creativa está lista para tomar el escenario global de la moda.{" "}
+                <strong className="text-ink font-medium">Es nuestro turno.</strong>
               </p>
               <p>
-                Argentina Haute Couture no celebra el lujo silencioso —
-                celebra el <strong className="text-celeste-deep font-medium">orgullo</strong>,
-                la <strong className="text-tango font-medium">pasión</strong> y el
-                <strong className="text-sol-deep font-medium"> talento argentino</strong> en
-                todas sus formas.
+                Argentina Haute Couture no celebra el lujo silencioso — celebra el{" "}
+                <strong className="text-celeste-deep font-medium">orgullo</strong>, la{" "}
+                <strong className="text-tango font-medium">pasión</strong> y el
+                <strong className="text-sol-deep font-medium"> talento argentino</strong> en todas
+                sus formas.
               </p>
               <p>
-                Es la plataforma cultural que convierte a Buenos Aires en la nueva capital
-                creativa del hemisferio sur.
+                Es la plataforma cultural que convierte a Buenos Aires en la nueva capital creativa
+                del hemisferio sur.
               </p>
             </div>
           </Reveal>
