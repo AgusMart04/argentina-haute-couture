@@ -1,0 +1,180 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ivory: var(--ivory);
+  --color-cloud: var(--cloud);
+  --color-celeste: var(--celeste);
+  --color-celeste-deep: var(--celeste-deep);
+  --color-sky: var(--sky-ar);
+  --color-sol: var(--sol);
+  --color-sol-deep: var(--sol-deep);
+  --color-tango: var(--tango);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-stone: var(--stone);
+
+  --font-display: "Fraunces", "Cormorant Garamond", serif;
+  --font-sans: "Inter", "Helvetica Neue", sans-serif;
+  --font-impact: "Bebas Neue", "Archivo Black", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --ivory: oklch(0.985 0.005 90);
+  --cloud: oklch(0.965 0.012 230);
+  --celeste: oklch(0.74 0.135 235);
+  --celeste-deep: oklch(0.52 0.18 245);
+  --sky-ar: oklch(0.82 0.105 230);
+  --sol: oklch(0.82 0.165 85);
+  --sol-deep: oklch(0.70 0.18 70);
+  --tango: oklch(0.62 0.235 18);
+  --ink: oklch(0.18 0.06 250);
+  --ink-soft: oklch(0.34 0.05 250);
+  --stone: oklch(0.55 0.015 250);
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --card: oklch(0.99 0.004 230);
+  --card-foreground: var(--ink);
+  --popover: var(--ivory);
+  --popover-foreground: var(--ink);
+  --primary: var(--celeste-deep);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--cloud);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.95 0.01 235);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--sol);
+  --accent-foreground: var(--ink);
+  --destructive: var(--tango);
+  --destructive-foreground: var(--ivory);
+  --border: oklch(0.88 0.02 235);
+  --input: oklch(0.92 0.01 235);
+  --ring: var(--celeste);
+}
+
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background-color: var(--color-sol); color: var(--color-ink); }
+
+  .font-display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.035em; }
+  .font-impact { font-family: var(--font-impact); letter-spacing: 0.005em; }
+  .font-mono { font-family: var(--font-mono); }
+
+  .label-eyebrow {
+    font-family: var(--font-impact);
+    font-size: 0.85rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-celeste-deep);
+  }
+
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.05;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+}
+
+@keyframes slow-zoom { from { transform: scale(1.05); } to { transform: scale(1.18); } }
+@keyframes reveal-blur { from { opacity: 0; filter: blur(20px); transform: translateY(20px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes scroll-hint { 0%,100% { transform: translateY(0); opacity: 0.4; } 50% { transform: translateY(8px); opacity: 1; } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes sun-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+@keyframes gradient-shift {
+  0%,100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes flag-wave {
+  0%,100% { transform: translateY(0) skewY(0); }
+  50% { transform: translateY(-4px) skewY(-0.5deg); }
+}
+
+@utility animate-slow-zoom { animation: slow-zoom 22s ease-out infinite alternate; }
+@utility animate-scroll-hint { animation: scroll-hint 2s ease-in-out infinite; }
+@utility animate-marquee { animation: marquee 35s linear infinite; }
+@utility animate-sun-spin { animation: sun-spin 60s linear infinite; }
+@utility animate-gradient-shift { background-size: 200% 200%; animation: gradient-shift 12s ease infinite; }
+@utility animate-flag-wave { animation: flag-wave 5s ease-in-out infinite; }
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 1s ease;
+  filter: blur(8px);
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@utility hairline {
+  background: linear-gradient(90deg, transparent, var(--color-celeste-deep) 50%, transparent);
+  height: 2px;
+}
+
+@utility text-balance { text-wrap: balance; }
+
+@utility gradient-argentina {
+  background-image: linear-gradient(120deg, var(--color-celeste-deep) 0%, var(--color-celeste) 35%, var(--color-sky) 55%, var(--color-sol) 100%);
+}
+
+@utility text-flag {
+  background-image: linear-gradient(90deg, var(--color-celeste-deep), var(--color-ivory) 50%, var(--color-celeste-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
